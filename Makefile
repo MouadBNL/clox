@@ -4,7 +4,9 @@ CFLAGS= -Wall -g
 LDFLAGS=
 
 OBJS=main.o chunk.o memory.o debug.o
+
 all: $(OBJS)
+	@mkdir -p build
 	$(CC) $(LDFLAGS) $(OBJS) -o build/clox
 
 
@@ -15,4 +17,7 @@ main.o: src/main.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf *.o clox
+	@rm -rf *.o clox
+
+fclean: clean
+	@rm -rf build
