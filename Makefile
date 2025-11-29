@@ -3,7 +3,7 @@ CC=clang
 CFLAGS= -Wall -g
 LDFLAGS=
 
-OBJS=main.o chunk.o memory.o debug.o
+OBJS=main.o chunk.o memory.o debug.o value.o
 
 all: $(OBJS)
 	@mkdir -p build
